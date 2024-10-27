@@ -1,66 +1,115 @@
 Weather Monitoring System
-Overview
-The Weather Monitoring System is a real-time data processing application that retrieves weather data from the OpenWeatherMap API.
-It allows users to view current weather conditions for selected cities and provides daily summaries and alerts based on the temperature.
+Table of Contents
+Project Overview
+Features
+Technologies Used
+Data Structure
+API Design
+Usage
+Testing
+Design Choices
+Future Enhancements
+Dependencies
+Contributors
+License
+
+Project Overview
+The Weather Monitoring System is a real-time application that retrieves weather data frothe OpenWeatherMap API. It allows users to view current weather conditions for selected cities and provides daily summaries and alerts based on temperature data.
 
 Features
-1. Fetch and display weather data for all cities or a specific city.
-2. User preference for temperature units (Celsius or Fahrenheit).
-3. Daily weather summaries, including average, maximum, and minimum temperatures.
-4. Alerts for extreme temperatures.
+
+1. Weather Data Retrieval: Fetches and displays weather data for all cities or a specific city.
+2. User Preferences: Allows users to choose temperature units (Celsius or Fahrenheit).
+3. Daily Summaries and Alerts: Displays average, maximum, and minimum temperatures, along with alerts for extreme weather conditions.
 
 Technologies Used
 - Frontend: HTML, CSS, JavaScript
 - Backend: Node.js, Express
-- Database: MongoDB (if applicable)
+- Database: MongoDB
 - API: OpenWeatherMap API
-  
-Installation
-Prerequisites
-- Node.js (version 14 or higher)
-- MongoDB (if applicable)
-- Docker or Podman (for containerization)
-  
-Setup Instructions
-Clone the Repository:
-git clone (https://github.com/NeetuShaw/Weather-monitoring-system)
 
-Install Dependencies: Navigate to the backend directory and install the required Node.js packages.
-cd backend
+Data Structure
+The system uses a structured data model to store weather information:
+
+1. WeatherModel:
+- city: The city for which weather data is retrieved.
+- temperature: Current temperature, stored based on user preference.
+- summary: Daily average, minimum, and maximum temperatures.
+- alerts: Notifies users about extreme temperatures.
+
+API Design
+1. Fetch Weather Data (GET /weather): Retrieves weather data for all or a specified city.
+2. Get Daily Summary (GET /weather/summary): Provides daily averages and alerts.
+3. Set User Preferences (POST /preferences): Saves temperature unit preferences.
+
+Project Setup
+1. Clone the Repository:
+git clone https://github.com/NeetuShaw/Weather-monitoring-system.git
+cd Weather-monitoring-system
+
+2. Backend Setup:
+- Ensure Node.js is installed.
+- In the root directory, install backend dependencies:
 npm install
 
-Set Up Environment Variables: Create a .env file in the root directory and add the following variables:
-OPENWEATHER_API_KEY=6e62a840087f6836aabbc68713ade9d1
+3. Frontend Setup:
+- Navigate to the frontend folder and install dependencies:
+cd frontend
+npm install
 
-Run the Application: You can run the application using the following command:
+4. Set Up Environment Variables:
+- Create a .env file in the root directory and add your API key:
+makefile
+
+OPENWEATHER_API_KEY=your_api_key_here
+
+5. Run the Application:
+
+Start the backend server:
 npm start
-Access the Application: Open your browser and navigate to http://localhost:3000.
 
-Running with Docker
-If you prefer to run the application using Docker, follow these steps:
+Start the frontend server:
+npm start
 
-Build the Docker Image:
-docker build -t weather-monitoring-system.
-
-Run the Docker Container:
-docker run -p 3000:3000 weather-monitoring-system.
+6. Database:
+Set up MongoDB if you wish to store data, and add the connection string in your backend configuration.
 
 Usage
-1. Select the data view (All Cities or Specific City).
-2. Choose the temperature unit (Celsius or Fahrenheit).
-3. Click on the "Get Weather" button to fetch the weather data.
-4. View the daily summary and any alerts generated based on the weather data.
+1. Fetch Weather Data: Select data view options (all cities or specific city) and fetch the weather data.
+2. User Preferences: Set temperature units in Celsius or Fahrenheit.
+3. Daily Summaries and Alerts: View summaries and alerts based on extreme weather data.
+
+Example API Requests
+1. Fetch Weather Data
+GET /weather?city=London
+
+2. Set Preferences
+POST /preferences
+Body: { "unit": "Celsius" }
+
+Testing
+1. Unit Testing: Test each feature with sample requests.
+2. Functional Testing: Confirm API responses and frontend interactions.
 
 Design Choices
-- The application is designed to be user-friendly, with a clean and simple UI that allows easy interaction.
-- Real-time data fetching ensures users always receive the latest weather information.
-- The alert system provides immediate feedback on extreme weather conditions.
-  
+- Node.js and Express for Backend: Provides efficient real-time data fetching and processing.
+- Modular Structure: Organized code for easy scalability and maintenance.
+- User Preferences: Stored to customize the experience based on temperature units and location.
+
+Future Enhancements
+- Expanded Weather Metrics: Add wind speed, humidity, and precipitation.
+- Enhanced User Alerts: More detailed notifications for extreme weather conditions.
+- Mobile Optimization: Refine the UI for better experience on mobile devices.
+
 Dependencies
-- Express
-- Axios (for HTTP requests)
-- dotenv (for environment variable management)
-- MongoDB (if applicable)
-  
+- Backend: Express, Axios, dotenv
+- Frontend: HTML, CSS, JavaScript
+- Database: MongoDB (optional)
+- API: OpenWeatherMap
+
+Contributors
+Neetu Shaw
+
 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
