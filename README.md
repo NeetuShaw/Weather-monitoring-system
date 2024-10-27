@@ -62,7 +62,7 @@ npm install
 - Create a .env file in the root directory and add your API key:
 makefile
 
-OPENWEATHER_API_KEY=your_api_key_here
+OPENWEATHER_API_KEY=6e62a840087f6836aabbc68713ade9d1
 
 5. Run the Application:
 
