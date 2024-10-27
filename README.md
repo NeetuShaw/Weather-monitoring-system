@@ -23,15 +23,14 @@ Prerequisites
   
 Setup Instructions
 Clone the Repository:
-git clone [your-github-repo-url]
-cd [your-repo-directory]
+git clone (https://github.com/NeetuShaw/Weather-monitoring-system)
 
 Install Dependencies: Navigate to the backend directory and install the required Node.js packages.
 cd backend
 npm install
 
 Set Up Environment Variables: Create a .env file in the root directory and add the following variables:
-OPENWEATHER_API_KEY=your_api_key
+OPENWEATHER_API_KEY=6e62a840087f6836aabbc68713ade9d1
 
 Run the Application: You can run the application using the following command:
 npm start
