@@ -1,35 +1,35 @@
-Weather Monitoring System
+# Weather Monitoring System
 
 ## Table of Contents
-#Project Overview
-#Features
-#Technologies Used
-#Data Structure
-#API Design
-#Usage
-#Testing
-#Design Choices
-#Future Enhancements
-#Dependencies
-#Contributors
-#License
+1. [Project Overview](#project-overview)
+2. [Features](#features)
+3. [Technologies Used](#technologies-used)
+4. [Data Structure](#data-structure)
+5. [API Design](#api-design)
+6. [Usage](#usage)
+7. [Testing](#testing)
+8. [Design Choices](#design-choices)
+9. [Future Enhancements](#future-enhancements)
+10. [Dependencies](#dependencies)
+11. [Contributors](#contributors)
+12. [License](#license)
 
-##Project Overview
+## Project Overview
 The Weather Monitoring System is a real-time application that retrieves weather data frothe OpenWeatherMap API. It allows users to view current weather conditions for selected cities and provides daily summaries and alerts based on temperature data.
 
-##Features
+## Features
 
 1. Weather Data Retrieval: Fetches and displays weather data for all cities or a specific city.
 2. User Preferences: Allows users to choose temperature units (Celsius or Fahrenheit).
 3. Daily Summaries and Alerts: Displays average, maximum, and minimum temperatures, along with alerts for extreme weather conditions.
 
-##Technologies Used
+## Technologies Used
 - Frontend: HTML, CSS, JavaScript
 - Backend: Node.js, Express
 - Database: MongoDB
 - API: OpenWeatherMap API
 
-##Data Structure
+## Data Structure
 The system uses a structured data model to store weather information:
 
 1. WeatherModel:
@@ -38,7 +38,7 @@ The system uses a structured data model to store weather information:
 - summary: Daily average, minimum, and maximum temperatures.
 - alerts: Notifies users about extreme temperatures.
 
-##API Design
+## API Design
 1. Fetch Weather Data (GET /weather): Retrieves weather data for all or a specified city.
 2. Get Daily Summary (GET /weather/summary): Provides daily averages and alerts.
 3. Set User Preferences (POST /preferences): Saves temperature unit preferences.
@@ -75,7 +75,7 @@ npm start
 6. Database:
 Set up MongoDB if you wish to store data, and add the connection string in your backend configuration.
 
-##Usage
+## Usage
 1. Fetch Weather Data: Select data view options (all cities or specific city) and fetch the weather data.
 2. User Preferences: Set temperature units in Celsius or Fahrenheit.
 3. Daily Summaries and Alerts: View summaries and alerts based on extreme weather data.
@@ -88,29 +88,29 @@ GET /weather?city=London
 POST /preferences
 Body: { "unit": "Celsius" }
 
-##Testing
+## Testing
 1. Unit Testing: Test each feature with sample requests.
 2. Functional Testing: Confirm API responses and frontend interactions.
 
-##Design Choices
+## Design Choices
 - Node.js and Express for Backend: Provides efficient real-time data fetching and processing.
 - Modular Structure: Organized code for easy scalability and maintenance.
 - User Preferences: Stored to customize the experience based on temperature units and location.
 
-##Future Enhancements
+## Future Enhancements
 - Expanded Weather Metrics: Add wind speed, humidity, and precipitation.
 - Enhanced User Alerts: More detailed notifications for extreme weather conditions.
 - Mobile Optimization: Refine the UI for better experience on mobile devices.
 
-##Dependencies
+## Dependencies
 - Backend: Express, Axios, dotenv
 - Frontend: HTML, CSS, JavaScript
 - Database: MongoDB (optional)
 - API: OpenWeatherMap
 
-##Contributors
+## Contributors
 Neetu Shaw
 
-##License
+## License
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
